@@ -1,6 +1,6 @@
 {
   "name": "@triochat/triochat-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Welcome to the TriochatSdk SDK documentation. This guide will help you get started with integrating and using the TriochatSdk SDK in your project.",
   "source": "./src/index.ts",
   "main": "./dist/index.js",

@@ -1,7 +1,7 @@
 {
   "name": "@triochat/triochat-sdk",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome to the TriochatSdk SDK documentation. This guide will help you get started with integrating and using the TriochatSdk SDK in your project.",
   "source": "./src/index.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -10,7 +10,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "tsc --noEmit",
-    "build": "tsup-node src/index.ts --format cjs,esm --dts --clean",
+    "build": "ts-node src/index.ts --format cjs,esm --dts --clean",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -38,5 +38,18 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixel-technology/triochat-typescript-sdk.git"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pixel-technology/triochat-typescript-sdk/issues"
+  },
+  "homepage": "https://github.com/pixel-technology/triochat-typescript-sdk#readme"
 }

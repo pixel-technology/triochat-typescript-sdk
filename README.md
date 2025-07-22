@@ -30,7 +30,7 @@ This SDK is compatible with the following versions: `TypeScript >= 4.8.4`
 To get started with the SDK, we recommend installing using `npm`:
 
 ```bash
-npm install @triochat/triochat-sdk
+npm install @triochat/@triochat/triochat-sdk
 ```
 
 ## Setting a Custom Timeout
@@ -46,7 +46,7 @@ const triochatSdk = new TriochatSdk({ timeout: 10000 });
 Below is a comprehensive example demonstrating how to authenticate and call a simple endpoint:
 
 ```ts
-import { TriochatSdk } from '@triochat/triochat-sdk';
+import { TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});

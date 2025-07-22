@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@triochat/triochat-sdk": "file:../",
+    "@triochat/@triochat/triochat-sdk": "file:../",
     "zod": "3.22.0"
   },
   "scripts": {

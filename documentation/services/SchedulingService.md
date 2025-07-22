@@ -25,7 +25,7 @@ A list of all methods in the `SchedulingService` service. Click on the method na
 **Example Usage Code Snippet**
 
 ```typescript
-import { MessageBodyDto, ScheduleMessageDto, TriochatSdk } from '@triochat/triochat-sdk';
+import { MessageBodyDto, ScheduleMessageDto, TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});
@@ -75,7 +75,7 @@ import { MessageBodyDto, ScheduleMessageDto, TriochatSdk } from '@triochat/trioc
 **Example Usage Code Snippet**
 
 ```typescript
-import { TriochatSdk } from '@triochat/triochat-sdk';
+import { TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});
@@ -109,7 +109,7 @@ import { TriochatSdk } from '@triochat/triochat-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { TriochatSdk } from '@triochat/triochat-sdk';
+import { TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});
@@ -144,7 +144,7 @@ import { TriochatSdk } from '@triochat/triochat-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { TriochatSdk } from '@triochat/triochat-sdk';
+import { TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});
@@ -171,7 +171,7 @@ import { TriochatSdk } from '@triochat/triochat-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { TriochatSdk } from '@triochat/triochat-sdk';
+import { TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});
@@ -198,7 +198,7 @@ import { TriochatSdk } from '@triochat/triochat-sdk';
 **Example Usage Code Snippet**
 
 ```typescript
-import { ReplayRunDto, TriochatSdk } from '@triochat/triochat-sdk';
+import { ReplayRunDto, TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});

@@ -1,10 +1,10 @@
-# @triochat/triochat-sdk
+# @triochat/@triochat/triochat-sdk
 
-A basic example of how to use the @triochat/triochat-sdk package.
+A basic example of how to use the @triochat/@triochat/triochat-sdk package.
 
 ## Installation
 
-In the event `@triochat/triochat-sdk` is not published to npm, you can install it locally by running the following command in the examples folder:
+In the event `@triochat/@triochat/triochat-sdk` is not published to npm, you can install it locally by running the following command in the examples folder:
 
 ```sh
 npm run setup
@@ -15,7 +15,7 @@ This will rebuild the parent package and install it locally.
 Otherwise you can install it from npm:
 
 ```sh
-npm install @triochat/triochat-sdk
+npm install @triochat/@triochat/triochat-sdk
 ```
 
 ## Usage

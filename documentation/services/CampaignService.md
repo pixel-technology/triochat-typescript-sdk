@@ -20,7 +20,7 @@ A list of all methods in the `CampaignService` service. Click on the method name
 **Example Usage Code Snippet**
 
 ```typescript
-import { TriochatSdk } from '@triochat/triochat-sdk';
+import { TriochatSdk } from '@triochat/@triochat/triochat-sdk';
 
 (async () => {
   const triochatSdk = new TriochatSdk({});

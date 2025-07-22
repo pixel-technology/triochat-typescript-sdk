@@ -1,5 +1,5 @@
 {
-  "name": "@triochat/triochat-sdk",
+  "name": "@triochat/@triochat/triochat-sdk",
   "version": "1.0.0",
   "description": "",
   "source": "./src/index.ts",

@@ -1,6 +1,6 @@
 {
   "liblabVersion": "2.25.37",
-  "date": "2025-07-22T07:43:32.531Z",
+  "date": "2025-07-22T08:08:09.540Z",
   "config": {
     "apiId": 2518,
     "sdkName": "triochat-sdk",
@@ -19,7 +19,7 @@
       "createDocs": true,
       "languageOptions": {
         "typescript": {
-          "npmName": "triochat-sdk",
+          "npmName": "@triochat/triochat-sdk",
           "npmOrg": "triochat",
           "githubRepoName": "triochat-typescript-sdk",
           "sdkVersion": "1.0.0"
@@ -46,7 +46,7 @@
         "exportClassDefault": false,
         "generateEnumAs": "enum",
         "httpClient": "fetch",
-        "npmName": "triochat-sdk",
+        "npmName": "@triochat/triochat-sdk",
         "npmOrg": "triochat"
       }
     },
@@ -80,7 +80,7 @@
     "denoteCommon": false,
     "exportClassDefault": false,
     "generateEnumAs": "enum",
-    "npmName": "triochat-sdk",
+    "npmName": "@triochat/triochat-sdk",
     "npmOrg": "triochat",
     "typescriptVersion": "5.3.3",
     "zodVersion": "3.22.0",

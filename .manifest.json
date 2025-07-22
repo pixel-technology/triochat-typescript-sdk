@@ -1,8 +1,8 @@
 {
   "liblabVersion": "2.25.37",
-  "date": "2025-07-22T07:43:32.531Z",
+  "date": "2025-07-22T08:16:52.680Z",
   "config": {
-    "apiId": 2518,
+    "apiId": 2519,
     "sdkName": "triochat-sdk",
     "sdkVersion": "1.0.0",
     "languages": ["typescript"],

@@ -1,6 +1,6 @@
 {
-  "liblabVersion": "2.25.37",
-  "date": "2025-07-24T12:10:11.279Z",
+  "liblabVersion": "2.25.38",
+  "date": "2025-07-24T20:59:55.363Z",
   "config": {
     "apiId": 2519,
     "baseUrl": "https://scheduler-backend-dev.onrender.com",
@@ -133,13 +133,13 @@
     "examples/README.md",
     "examples/src/index.ts",
     "src/http/client.ts",
-    "src/services/api/models/send-message-dto.ts",
+    "src/services/sdk/models/sdk-send-message-dto.ts",
     ".gitignore",
     "src/services/base-service.ts",
-    "src/services/api/api-service.ts",
+    "src/services/sdk/sdk-service.ts",
     "src/index.ts",
-    "src/services/api/models/index.ts",
-    "src/services/api/index.ts",
+    "src/services/sdk/models/index.ts",
+    "src/services/sdk/index.ts",
     "src/http/index.ts",
     "src/http/handlers/handler-chain.ts",
     "src/http/types.ts",
@@ -151,7 +151,7 @@
     "src/http/handlers/retry-handler.ts",
     "src/http/environment.ts",
     "src/http/handlers/response-validation-handler.ts",
-    "documentation/models/SendMessageDto.md",
+    "documentation/models/SdkSendMessageDto.md",
     "src/http/handlers/request-validation-handler.ts",
     ".devcontainer/devcontainer.json",
     "src/http/transport/request.ts",
@@ -169,7 +169,7 @@
     "src/http/transport/types.ts",
     "src/http/errors/throwable-error.ts",
     ".env.example",
-    "documentation/services/ApiService.md",
+    "documentation/services/SdkService.md",
     "README.md"
   ]
 }

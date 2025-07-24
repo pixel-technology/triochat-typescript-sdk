@@ -22,4 +22,8 @@ export class BaseService {
   set timeoutMs(timeoutMs: number) {
     this.config.timeoutMs = timeoutMs;
   }
+
+  set token(token: string) {
+    this.config.token = token;
+  }
 }

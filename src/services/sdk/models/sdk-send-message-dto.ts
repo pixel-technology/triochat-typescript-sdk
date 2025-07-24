@@ -5,59 +5,50 @@ import { z } from 'zod';
 /**
  * The shape of the model inside the application code - what the users use
  */
-export const sendMessageDto = z.lazy(() => {
+export const sdkSendMessageDto = z.lazy(() => {
   return z.object({
     countryCode: z.string(),
     phoneNumber: z.string(),
     messageType: z.string(),
     templateName: z.string(),
-    leadId: z.any(),
-    chatId: z.any(),
     messageText: z.string(),
     components: z.array(z.string()),
     context: z.any(),
     mediaMessage: z.any().optional(),
-    userId: z.any(),
     media: z.any().optional(),
   });
 });
 
 /**
  *
- * @typedef  {SendMessageDto} sendMessageDto
+ * @typedef  {SdkSendMessageDto} sdkSendMessageDto
  * @property {string}
  * @property {string}
  * @property {string}
  * @property {string}
- * @property {any}
- * @property {any}
  * @property {string}
  * @property {string[]}
  * @property {any}
  * @property {any}
  * @property {any}
- * @property {any}
  */
-export type SendMessageDto = z.infer<typeof sendMessageDto>;
+export type SdkSendMessageDto = z.infer<typeof sdkSendMessageDto>;
 
 /**
  * The shape of the model mapping from the api schema into the application shape.
  * Is equal to application shape if all property names match the api schema
  */
-export const sendMessageDtoResponse = z.lazy(() => {
+export const sdkSendMessageDtoResponse = z.lazy(() => {
   return z
     .object({
       country_code: z.string(),
       phone_number: z.string(),
       messageType: z.string(),
       template_name: z.string(),
-      lead_id: z.any(),
-      chat_id: z.any(),
       messageText: z.string(),
       components: z.array(z.string()),
       context: z.any(),
       mediaMessage: z.any().optional(),
-      user_id: z.any(),
       media: z.any().optional(),
     })
     .transform((data) => ({
@@ -65,13 +56,10 @@ export const sendMessageDtoResponse = z.lazy(() => {
       phoneNumber: data['phone_number'],
       messageType: data['messageType'],
       templateName: data['template_name'],
-      leadId: data['lead_id'],
-      chatId: data['chat_id'],
       messageText: data['messageText'],
       components: data['components'],
       context: data['context'],
       mediaMessage: data['mediaMessage'],
-      userId: data['user_id'],
       media: data['media'],
     }));
 });
@@ -80,20 +68,17 @@ export const sendMessageDtoResponse = z.lazy(() => {
  * The shape of the model mapping from the application shape into the api schema.
  * Is equal to application shape if all property names match the api schema
  */
-export const sendMessageDtoRequest = z.lazy(() => {
+export const sdkSendMessageDtoRequest = z.lazy(() => {
   return z
     .object({
       countryCode: z.string(),
       phoneNumber: z.string(),
       messageType: z.string(),
       templateName: z.string(),
-      leadId: z.any(),
-      chatId: z.any(),
       messageText: z.string(),
       components: z.array(z.string()),
       context: z.any(),
       mediaMessage: z.any().optional(),
-      userId: z.any(),
       media: z.any().optional(),
     })
     .transform((data) => ({
@@ -101,13 +86,10 @@ export const sendMessageDtoRequest = z.lazy(() => {
       phone_number: data['phoneNumber'],
       messageType: data['messageType'],
       template_name: data['templateName'],
-      lead_id: data['leadId'],
-      chat_id: data['chatId'],
       messageText: data['messageText'],
       components: data['components'],
       context: data['context'],
       mediaMessage: data['mediaMessage'],
-      user_id: data['userId'],
       media: data['media'],
     }));
 });

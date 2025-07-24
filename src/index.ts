@@ -2,30 +2,34 @@
 
 import { Environment } from './http/environment';
 import { SdkConfig } from './http/types';
-import { ApiService } from './services/api';
+import { SdkService } from './services/sdk';
 
-export * from './services/api';
+export * from './services/sdk';
 
 export * from './http';
 export { Environment } from './http/environment';
 
 export class TriochatSdk {
-  public readonly api: ApiService;
+  public readonly sdk: SdkService;
 
   constructor(public config: SdkConfig) {
-    this.api = new ApiService(this.config);
+    this.sdk = new SdkService(this.config);
   }
 
   set baseUrl(baseUrl: string) {
-    this.api.baseUrl = baseUrl;
+    this.sdk.baseUrl = baseUrl;
   }
 
   set environment(environment: Environment) {
-    this.api.baseUrl = environment;
+    this.sdk.baseUrl = environment;
   }
 
   set timeoutMs(timeoutMs: number) {
-    this.api.timeoutMs = timeoutMs;
+    this.sdk.timeoutMs = timeoutMs;
+  }
+
+  set token(token: string) {
+    this.sdk.token = token;
   }
 }
 

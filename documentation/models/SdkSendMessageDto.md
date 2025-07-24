@@ -1,4 +1,4 @@
-# SendMessageDto
+# SdkSendMessageDto
 
 **Properties**
 
@@ -8,12 +8,9 @@
 | phoneNumber  | string   | ✅       |             |
 | messageType  | string   | ✅       |             |
 | templateName | string   | ✅       |             |
-| leadId       | any      | ✅       |             |
-| chatId       | any      | ✅       |             |
 | messageText  | string   | ✅       |             |
 | components   | string[] | ✅       |             |
 | context      | any      | ✅       |             |
-| userId       | any      | ✅       |             |
 | mediaMessage | any      | ❌       |             |
 | media        | any      | ❌       |             |
 

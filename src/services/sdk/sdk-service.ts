@@ -7,29 +7,37 @@ import { RequestBuilder } from '../../http/transport/request-builder';
 import { SerializationStyle } from '../../http/serialization/base-serializer';
 import { ThrowableError } from '../../http/errors/throwable-error';
 import { Environment } from '../../http/environment';
-import { SendMessageDto, sendMessageDtoRequest } from './models/send-message-dto';
+import { SdkSendMessageDto, sdkSendMessageDtoRequest } from './models/sdk-send-message-dto';
 
-export class ApiService extends BaseService {
+export class SdkService extends BaseService {
   /**
    *
    * @param {RequestConfig} requestConfig - (Optional) The request configuration for retry and validation.
-   * @returns {Promise<HttpResponse<any>>}
+   * @returns {Promise<HttpResponse<any>>} Message sent successfully
    */
-  async sendMessageControllerSendMessage(
-    body: SendMessageDto,
-    requestConfig?: RequestConfig,
-  ): Promise<HttpResponse<void>> {
+  async sdkControllerSendMessage(body: SdkSendMessageDto, requestConfig?: RequestConfig): Promise<HttpResponse<void>> {
     const request = new RequestBuilder()
       .setBaseUrl(requestConfig?.baseUrl || this.config.baseUrl || this.config.environment || Environment.DEFAULT)
       .setConfig(this.config)
       .setMethod('POST')
-      .setPath('/api/send-message')
-      .setRequestSchema(sendMessageDtoRequest)
+      .setPath('/sdk/send-message')
+      .setRequestSchema(sdkSendMessageDtoRequest)
+      .addAccessTokenAuth(this.config.token)
       .setRequestContentType(ContentType.Json)
       .addResponse({
         schema: z.undefined(),
         contentType: ContentType.NoContent,
-        status: 201,
+        status: 200,
+      })
+      .addError({
+        error: ThrowableError,
+        contentType: ContentType.NoContent,
+        status: 400,
+      })
+      .addError({
+        error: ThrowableError,
+        contentType: ContentType.NoContent,
+        status: 500,
       })
       .setRetryAttempts(this.config, requestConfig)
       .setRetryDelayMs(this.config, requestConfig)

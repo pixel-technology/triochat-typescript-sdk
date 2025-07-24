@@ -2,48 +2,30 @@
 
 import { Environment } from './http/environment';
 import { SdkConfig } from './http/types';
-import { SchedulingService } from './services/scheduling';
-import { InternalService } from './services/internal';
-import { CampaignService } from './services/campaign';
+import { ApiService } from './services/api';
 
-export * from './services/scheduling';
-export * from './services/internal';
-export * from './services/campaign';
+export * from './services/api';
 
 export * from './http';
 export { Environment } from './http/environment';
 
 export class TriochatSdk {
-  public readonly scheduling: SchedulingService;
-
-  public readonly internal: InternalService;
-
-  public readonly campaign: CampaignService;
+  public readonly api: ApiService;
 
   constructor(public config: SdkConfig) {
-    this.scheduling = new SchedulingService(this.config);
-
-    this.internal = new InternalService(this.config);
-
-    this.campaign = new CampaignService(this.config);
+    this.api = new ApiService(this.config);
   }
 
   set baseUrl(baseUrl: string) {
-    this.scheduling.baseUrl = baseUrl;
-    this.internal.baseUrl = baseUrl;
-    this.campaign.baseUrl = baseUrl;
+    this.api.baseUrl = baseUrl;
   }
 
   set environment(environment: Environment) {
-    this.scheduling.baseUrl = environment;
-    this.internal.baseUrl = environment;
-    this.campaign.baseUrl = environment;
+    this.api.baseUrl = environment;
   }
 
   set timeoutMs(timeoutMs: number) {
-    this.scheduling.timeoutMs = timeoutMs;
-    this.internal.timeoutMs = timeoutMs;
-    this.campaign.timeoutMs = timeoutMs;
+    this.api.timeoutMs = timeoutMs;
   }
 }
 

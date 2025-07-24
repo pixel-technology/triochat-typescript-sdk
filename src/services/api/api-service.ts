@@ -7,20 +7,24 @@ import { RequestBuilder } from '../../http/transport/request-builder';
 import { SerializationStyle } from '../../http/serialization/base-serializer';
 import { ThrowableError } from '../../http/errors/throwable-error';
 import { Environment } from '../../http/environment';
+import { SendMessageDto, sendMessageDtoRequest } from './models/send-message-dto';
 
-export class InternalService extends BaseService {
+export class ApiService extends BaseService {
   /**
    *
    * @param {RequestConfig} requestConfig - (Optional) The request configuration for retry and validation.
    * @returns {Promise<HttpResponse<any>>}
    */
-  async internalControllerCreateAccessToken(requestConfig?: RequestConfig): Promise<HttpResponse<void>> {
+  async sendMessageControllerSendMessage(
+    body: SendMessageDto,
+    requestConfig?: RequestConfig,
+  ): Promise<HttpResponse<void>> {
     const request = new RequestBuilder()
       .setBaseUrl(requestConfig?.baseUrl || this.config.baseUrl || this.config.environment || Environment.DEFAULT)
       .setConfig(this.config)
       .setMethod('POST')
-      .setPath('/internal/access-token')
-      .setRequestSchema(z.any())
+      .setPath('/api/send-message')
+      .setRequestSchema(sendMessageDtoRequest)
       .setRequestContentType(ContentType.Json)
       .addResponse({
         schema: z.undefined(),
@@ -30,6 +34,8 @@ export class InternalService extends BaseService {
       .setRetryAttempts(this.config, requestConfig)
       .setRetryDelayMs(this.config, requestConfig)
       .setResponseValidation(this.config, requestConfig)
+      .addHeaderParam({ key: 'Content-Type', value: 'application/json' })
+      .addBody(body)
       .build();
     return this.client.call<void>(request);
   }

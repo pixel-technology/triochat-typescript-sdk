@@ -1,12 +1,13 @@
 {
   "liblabVersion": "2.25.37",
-  "date": "2025-07-24T11:49:39.256Z",
+  "date": "2025-07-24T12:10:11.279Z",
   "config": {
     "apiId": 2519,
+    "baseUrl": "https://scheduler-backend-dev.onrender.com",
     "sdkName": "triochat-sdk",
     "sdkVersion": "1.0.0",
     "languages": ["typescript"],
-    "auth": [],
+    "auth": ["bearer"],
     "docs": [],
     "liblabVersion": "2",
     "deliveryMethods": ["zip"],
@@ -16,6 +17,8 @@
       "apiName": "triochat-api",
       "specFilePath": "./spec.json",
       "languages": ["typescript"],
+      "baseUrl": "https://scheduler-backend-dev.onrender.com",
+      "auth": ["bearer"],
       "createDocs": true,
       "languageOptions": {
         "typescript": {

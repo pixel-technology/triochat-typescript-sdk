@@ -7,15 +7,18 @@ import { RequestBuilder } from '../../http/transport/request-builder';
 import { SerializationStyle } from '../../http/serialization/base-serializer';
 import { ThrowableError } from '../../http/errors/throwable-error';
 import { Environment } from '../../http/environment';
-import { SdkSendMessageDto, sdkSendMessageDtoRequest } from './models/sdk-send-message-dto';
+import { SdkSendMessageDto, sdkSendMessageDtoRequest, sdkSendMessageDtoResponse } from './models/sdk-send-message-dto';
 
 export class SdkService extends BaseService {
   /**
    *
    * @param {RequestConfig} requestConfig - (Optional) The request configuration for retry and validation.
-   * @returns {Promise<HttpResponse<any>>} Message sent successfully
+   * @returns {Promise<HttpResponse<SdkSendMessageDto[]>>} Message sent successfully
    */
-  async sdkControllerSendMessage(body: SdkSendMessageDto, requestConfig?: RequestConfig): Promise<HttpResponse<void>> {
+  async sdkControllerSendMessage(
+    body: SdkSendMessageDto,
+    requestConfig?: RequestConfig,
+  ): Promise<HttpResponse<SdkSendMessageDto[]>> {
     const request = new RequestBuilder()
       .setBaseUrl(requestConfig?.baseUrl || this.config.baseUrl || this.config.environment || Environment.DEFAULT)
       .setConfig(this.config)
@@ -25,8 +28,8 @@ export class SdkService extends BaseService {
       .addAccessTokenAuth(this.config.token)
       .setRequestContentType(ContentType.Json)
       .addResponse({
-        schema: z.undefined(),
-        contentType: ContentType.NoContent,
+        schema: z.array(sdkSendMessageDtoResponse),
+        contentType: ContentType.Json,
         status: 200,
       })
       .addError({
@@ -37,7 +40,7 @@ export class SdkService extends BaseService {
       .addError({
         error: ThrowableError,
         contentType: ContentType.NoContent,
-        status: 500,
+        status: 401,
       })
       .setRetryAttempts(this.config, requestConfig)
       .setRetryDelayMs(this.config, requestConfig)
@@ -45,6 +48,6 @@ export class SdkService extends BaseService {
       .addHeaderParam({ key: 'Content-Type', value: 'application/json' })
       .addBody(body)
       .build();
-    return this.client.call<void>(request);
+    return this.client.call<SdkSendMessageDto[]>(request);
   }
 }

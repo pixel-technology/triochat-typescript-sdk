@@ -17,6 +17,10 @@ A list of all methods in the `SdkService` service. Click on the method name to v
 | :--- | :-------------------------------------------------- | :------- | :---------------- |
 | body | [SdkSendMessageDto](../models/SdkSendMessageDto.md) | ✅       | The request body. |
 
+**Return Type**
+
+`SdkSendMessageDto[]`
+
 **Example Usage Code Snippet**
 
 ```typescript

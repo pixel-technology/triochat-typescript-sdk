@@ -7,10 +7,10 @@
 | countryCode  | string | ✅       |             |
 | phoneNumber  | string | ✅       |             |
 | messageType  | string | ✅       |             |
-| templateName | string | ✅       |             |
-| messageText  | string | ✅       |             |
-| components   | any[]  | ✅       |             |
-| context      | any    | ✅       |             |
+| templateName | string | ❌       |             |
+| messageText  | string | ❌       |             |
+| components   | any[]  | ❌       |             |
+| context      | any    | ❌       |             |
 | mediaMessage | any    | ❌       |             |
 | media        | any    | ❌       |             |
 

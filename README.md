@@ -1,82 +1,107 @@
-# TriochatSdk TypeScript SDK 1.0.0
+# 🚀 Triochat SDK — TypeScript SDK for WhatsApp Messaging
 
-Welcome to the TriochatSdk SDK documentation. This guide will help you get started with integrating and using the TriochatSdk SDK in your project.
+Welcome to the **Triochat SDK** — your ultimate tool to seamlessly send **WhatsApp messages** through the Triochat platform, built for developers who value speed, simplicity, and power. 🛠️💬
 
-## Versions
+## 📦 Versions
 
-- API version: `1.0.0`
-- SDK version: `1.0.0`
+- **API Version:** `1.0.0`
+- **SDK Version:** `1.0.0`
 
-## About the API
+## 🌐 About the SDK
 
-send message SDK API
+The Triochat SDK empowers developers to integrate WhatsApp messaging directly into their apps and services with minimal setup. Built in TypeScript, it provides robust typings and a developer-friendly interface.
 
-## Table of Contents
+> 🔐 **Authentication:** All requests require a valid token that can be created from the Triochat developer dashboard.  
+> ➡️ Create your token here: [https://triochat.io/](https://triochat.io/)
 
-- [Setup & Configuration](#setup--configuration)
-  - [Supported Language Versions](#supported-language-versions)
+---
+
+## 📚 Table of Contents
+
+- [✨ Features](#-features)
+- [⚙️ Setup & Configuration](#️-setup--configuration)
+  - [Supported TypeScript Versions](#supported-typescript-versions)
   - [Installation](#installation)
-- [Setting a Custom Timeout](#setting-a-custom-timeout)
-- [Sample Usage](#sample-usage)
-- [Services](#services)
-- [Models](#models)
+- [⏱️ Custom Timeout](#️-custom-timeout)
+- [🚀 Sample Usage](#-sample-usage)
+- [🧩 Services](#-services)
+- [📦 Models](#-models)
+- [🛠️ Support](#️-support)
 
-# Setup & Configuration
+---
 
-## Supported Language Versions
+## ✨ Features
 
-This SDK is compatible with the following versions: `TypeScript >= 4.8.4`
+- ✅ Send WhatsApp messages with ease
+- ✅ Fully typed DTOs with TypeScript support
+- ✅ Simple integration and clean API
+- ✅ Configurable timeout for requests
+- ✅ Developer-friendly structure
 
-## Installation
+---
 
-To get started with the SDK, we recommend installing using `npm`:
+## ⚙️ Setup & Configuration
 
-```bash
+### ✅ Supported TypeScript Versions
+
+This SDK supports: `TypeScript >= 4.8.4`
+
+### 📦 Installation
+
+Install the SDK using npm:
+
+\`\`\`bash
 npm install @triochat/triochat-sdk
-```
+\`\`\`
 
-## Setting a Custom Timeout
+---
 
-You can set a custom timeout for the SDK's HTTP requests as follows:
+## ⏱️ Custom Timeout
 
-```ts
+Set a custom timeout (in milliseconds) for the SDK's HTTP requests:
+
+\`\`\`ts
 const triochatSdk = new TriochatSdk({ timeout: 10000 });
-```
+\`\`\`
 
-# Sample Usage
+---
 
-Below is a comprehensive example demonstrating how to authenticate and call a simple endpoint:
+## 🚀 Sample Usage
 
-```ts
+\`\`\`ts
 import { SdkSendMessageDto, TriochatSdk } from '@triochat/triochat-sdk';
 
 (async () => {
-  const triochatSdk = new TriochatSdk({});
+const triochatSdk = new TriochatSdk({
+token: 'YOUR_TOKEN_HERE', // 👈 Get this from https://triochat.io/
+});
 
-  const sdkSendMessageDto: SdkSendMessageDto = {
-    countryCode: 'country_code',
-    phoneNumber: 'phone_number',
-    messageType: 'messageType',
-    templateName: 'template_name',
-    messageText: 'messageText',
-    components: ['components'],
-    context: {},
-    mediaMessage: {},
-    media: {},
-  };
+const sdkSendMessageDto: SdkSendMessageDto = {
+countryCode: '91',
+phoneNumber: '9876543210',
+messageType: 'text',
+templateName: 'welcome_template',
+messageText: 'Hello from Triochat!',
+components: ['button1', 'button2'],
+context: {},
+mediaMessage: {},
+media: {},
+};
 
-  const { data } = await triochatSdk.sdk.sdkControllerSendMessage(sdkSendMessageDto);
+const { data } = await triochatSdk.sdk.sdkControllerSendMessage(sdkSendMessageDto);
 
-  console.log(data);
+console.log('Message sent successfully:', data);
 })();
-```
+\`\`\`
 
-## Services
+---
+
+## 🧩 Services
 
 The SDK provides various services to interact with the API.
 
 <details>
-<summary>Below is a list of all available services with links to their detailed documentation:</summary>
+<summary>Click to view available services:</summary>
 
 | Name                                               |
 | :------------------------------------------------- |
@@ -84,16 +109,31 @@ The SDK provides various services to interact with the API.
 
 </details>
 
-## Models
+---
 
-The SDK includes several models that represent the data structures used in API requests and responses. These models help in organizing and managing the data efficiently.
+## 📦 Models
+
+The SDK includes models to help structure requests and responses.
 
 <details>
-<summary>Below is a list of all available models with links to their detailed documentation:</summary>
+<summary>Click to view available models:</summary>
 
-| Name                                                           | Description |
-| :------------------------------------------------------------- | :---------- |
-| [SdkSendMessageDto](documentation/models/SdkSendMessageDto.md) |             |
+| Name                                                           | Description             |
+| :------------------------------------------------------------- | :---------------------- |
+| [SdkSendMessageDto](documentation/models/SdkSendMessageDto.md) | WhatsApp message schema |
 
 </details>
 
+---
+
+## 🛠️ Support
+
+Need help or found a bug?
+
+- 🌐 Visit our website: [https://triochat.io](https://triochat.io)
+- 📧 Contact support: support@triochat.io
+- 🐛 Found an issue? [Open a GitHub Issue](https://github.com/triochat/triochat-sdk/issues)
+
+---
+
+> Made with ❤️ by the Triochat Team — powering seamless communication, one message at a time.

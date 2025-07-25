@@ -35,7 +35,7 @@ import { SdkSendMessageDto, TriochatSdk } from '@triochat/triochat-sdk';
     messageType: 'messageType',
     templateName: 'template_name',
     messageText: 'messageText',
-    components: ['components'],
+    components: [{}],
     context: {},
     mediaMessage: {},
     media: {},

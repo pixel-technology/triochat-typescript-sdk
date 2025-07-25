@@ -1,8 +1,8 @@
 {
   "liblabVersion": "2.25.38",
-  "date": "2025-07-25T10:39:25.402Z",
+  "date": "2025-07-25T19:48:25.147Z",
   "config": {
-    "apiId": 2542,
+    "apiId": 2544,
     "baseUrl": "https://scheduler-backend-dev.onrender.com",
     "sdkName": "triochat-sdk",
     "sdkVersion": "1.0.0",

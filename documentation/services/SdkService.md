@@ -19,7 +19,7 @@ A list of all methods in the `SdkService` service. Click on the method name to v
 
 **Return Type**
 
-`SdkSendMessageDto[]`
+`any`
 
 **Example Usage Code Snippet**
 

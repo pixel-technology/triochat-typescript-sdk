@@ -50,9 +50,9 @@ This SDK supports: `TypeScript >= 4.8.4`
 
 Install the SDK using npm:
 
-\`\`\`bash
+```bash
 npm install @triochat/triochat-sdk
-\`\`\`
+```
 
 ---
 
@@ -60,39 +60,41 @@ npm install @triochat/triochat-sdk
 
 Set a custom timeout (in milliseconds) for the SDK's HTTP requests:
 
-\`\`\`ts
+```typescript
 const triochatSdk = new TriochatSdk({ timeout: 10000 });
-\`\`\`
+```
 
 ---
 
 ## 🚀 Sample Usage
 
-\`\`\`ts
-import { SdkSendMessageDto, TriochatSdk } from '@triochat/triochat-sdk';
+```typescript
+import { SdkSendMessageDto, TriochatSdk } from "@triochat/triochat-sdk";
 
 (async () => {
-const triochatSdk = new TriochatSdk({
-token: 'YOUR_TOKEN_HERE', // 👈 Get this from https://triochat.io/
-});
+  const triochatSdk = new TriochatSdk({
+    token: "YOUR_TOKEN_HERE", // 👈 Get this from https://triochat.io/
+  });
 
-const sdkSendMessageDto: SdkSendMessageDto = {
-countryCode: '91',
-phoneNumber: '9876543210',
-messageType: 'text',
-templateName: 'welcome_template',
-messageText: 'Hello from Triochat!',
-components: ['button1', 'button2'],
-context: {},
-mediaMessage: {},
-media: {},
-};
+  const sdkSendMessageDto: SdkSendMessageDto = {
+    countryCode: "91",
+    phoneNumber: "9876543210",
+    messageType: "text",
+    templateName: "welcome_template",
+    messageText: "Hello from Triochat!",
+    components: ["button1", "button2"],
+    context: {},
+    mediaMessage: {},
+    media: {},
+  };
 
-const { data } = await triochatSdk.sdk.sdkControllerSendMessage(sdkSendMessageDto);
+  const { data } = await triochatSdk.sdk.sdkControllerSendMessage(
+    sdkSendMessageDto
+  );
 
-console.log('Message sent successfully:', data);
+  console.log("Message sent successfully:", data);
 })();
-\`\`\`
+```
 
 ---
 
@@ -132,7 +134,7 @@ Need help or found a bug?
 
 - 🌐 Visit our website: [https://triochat.io](https://triochat.io)
 - 📧 Contact support: support@triochat.io
-- 🐛 Found an issue? [Open a GitHub Issue](https://github.com/triochat/triochat-sdk/issues)
+- 🐛 Found an issue? [Open a GitHub Issue](https://github.com/pixel-technology/triochat-typescript-sdk)
 
 ---
 

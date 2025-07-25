@@ -7,18 +7,15 @@ import { RequestBuilder } from '../../http/transport/request-builder';
 import { SerializationStyle } from '../../http/serialization/base-serializer';
 import { ThrowableError } from '../../http/errors/throwable-error';
 import { Environment } from '../../http/environment';
-import { SdkSendMessageDto, sdkSendMessageDtoRequest, sdkSendMessageDtoResponse } from './models/sdk-send-message-dto';
+import { SdkSendMessageDto, sdkSendMessageDtoRequest } from './models/sdk-send-message-dto';
 
 export class SdkService extends BaseService {
   /**
    *
    * @param {RequestConfig} requestConfig - (Optional) The request configuration for retry and validation.
-   * @returns {Promise<HttpResponse<SdkSendMessageDto[]>>} Message sent successfully
+   * @returns {Promise<HttpResponse<any>>} Message sent successfully
    */
-  async sdkControllerSendMessage(
-    body: SdkSendMessageDto,
-    requestConfig?: RequestConfig,
-  ): Promise<HttpResponse<SdkSendMessageDto[]>> {
+  async sdkControllerSendMessage(body: SdkSendMessageDto, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
     const request = new RequestBuilder()
       .setBaseUrl(requestConfig?.baseUrl || this.config.baseUrl || this.config.environment || Environment.DEFAULT)
       .setConfig(this.config)
@@ -28,7 +25,7 @@ export class SdkService extends BaseService {
       .addAccessTokenAuth(this.config.token)
       .setRequestContentType(ContentType.Json)
       .addResponse({
-        schema: z.array(sdkSendMessageDtoResponse),
+        schema: z.any(),
         contentType: ContentType.Json,
         status: 200,
       })
@@ -48,6 +45,6 @@ export class SdkService extends BaseService {
       .addHeaderParam({ key: 'Content-Type', value: 'application/json' })
       .addBody(body)
       .build();
-    return this.client.call<SdkSendMessageDto[]>(request);
+    return this.client.call<any>(request);
   }
 }

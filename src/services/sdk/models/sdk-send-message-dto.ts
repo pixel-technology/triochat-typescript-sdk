@@ -12,7 +12,7 @@ export const sdkSendMessageDto = z.lazy(() => {
     messageType: z.string(),
     templateName: z.string(),
     messageText: z.string(),
-    components: z.array(z.string()),
+    components: z.array(z.any()),
     context: z.any(),
     mediaMessage: z.any().optional(),
     media: z.any().optional(),
@@ -27,7 +27,7 @@ export const sdkSendMessageDto = z.lazy(() => {
  * @property {string}
  * @property {string}
  * @property {string}
- * @property {string[]}
+ * @property {any[]}
  * @property {any}
  * @property {any}
  * @property {any}
@@ -46,7 +46,7 @@ export const sdkSendMessageDtoResponse = z.lazy(() => {
       messageType: z.string(),
       template_name: z.string(),
       messageText: z.string(),
-      components: z.array(z.string()),
+      components: z.array(z.any()),
       context: z.any(),
       mediaMessage: z.any().optional(),
       media: z.any().optional(),
@@ -76,7 +76,7 @@ export const sdkSendMessageDtoRequest = z.lazy(() => {
       messageType: z.string(),
       templateName: z.string(),
       messageText: z.string(),
-      components: z.array(z.string()),
+      components: z.array(z.any()),
       context: z.any(),
       mediaMessage: z.any().optional(),
       media: z.any().optional(),
